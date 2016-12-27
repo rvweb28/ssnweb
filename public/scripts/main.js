@@ -2,6 +2,10 @@ function setNavActive(href) {
 
   $('.navbar-right a[href="'+href+'"]').attr('id', 'active-nav');
 }
+function setDropdownActive(id) {
+
+  $('.navbar-right a[data-id="'+id+'"]').attr('id', 'active-nav');
+}
 
 var currentSize = 18;
 
