@@ -7,8 +7,8 @@ html, body {
   height: 100%;
 }
 footer {
-  border-top: 2px solid #c8e6c9;
-  background-color: #e8f5e9;
+  border-top: 2px solid #43a047;
+  background-color: #81c784;
   text-align: center;
   padding: 55px;
 }
@@ -104,6 +104,7 @@ footer a:hover {
   box-shadow: 0px 0px 5px #666;
   border-radius: 6px;
   cursor: default;
+  z-index: 2;
 }
 .choose-font {
   display: inline-block;

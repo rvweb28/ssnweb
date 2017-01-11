@@ -36,8 +36,7 @@ $container['notFoundHandler'] = function ($c) {
 };
 
 # add new controllers here
-$container['HomeController'] = function($container) {
-  return new \App\Controllers\HomeController($container);
-};
+$container['StaticController'] = function($container) { return new \App\Controllers\StaticController($container); };
+$container['AuthController'] = function($container) { return new \App\Controllers\AuthController($container); };
 
 require __DIR__ . '/../app/routes.php';

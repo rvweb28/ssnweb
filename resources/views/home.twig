@@ -8,49 +8,31 @@
 
 {% block content %}
 
-{% include "tiles/hero_slider.html" %}
+{% include "tiles/hero_image.html" %}
 
-<div class="container">
+<div class="slide-above-hero">
 
-  <div class="tile">
+  <div class="container">
 
-    <h1>Herzlich Willkommen beim Senioren-Service-Neustadt am Rübenberge</h1>
+    <div class="tile">
 
-    <p>
-
-      Sie möchten <strong>selbstbestimmt zu Hause wohnen</strong> und wünschen sich <strong>regelmäßig oder
-      ab und zu Unterstützung?</strong> Dann wenden Sie sich vertrauensvoll an uns. <strong>Wir sind gern für Sie da.</strong>
-      <br>
-      <br>
-      Die Betreuung und haushaltsnahe Dienstleistung nach § 45 b können durch den Verein
-      Senioren-Service-Neustadt e.V. günstiger abgerechnet werden.
-      <br>
-      <br>
-      Die Einkaufs- und Haushalthilfe wird bei Pflegestufe 0, I, II und III mit einem Betrag
-      von 104 € von der Pflegekasse übernommen.
-      <br>
-      <br>
-      <strong>Ich freue mich auf Ihren Anruf und wir lernen uns persönlich kennen.
-      Lassen Sie sich den Alltag erleichtern!</strong>
-      <br>
-      <br>
-      Adriana Reichenbach
-
-    </p>
-
-  </div>
-
-  <div class="row">
-
-    <div class="col-sm-6">
-
-      {% include "tiles/leistungsangebot.html" %}
+      {% include "data/home.html" %}
 
     </div>
 
-    <div class="col-sm-6">
+    <div class="row">
 
-      {% include "tiles/kostenubersicht.html" %}
+      <div class="col-sm-6">
+
+        {% include "tiles/leistungsangebot.twig" %}
+
+      </div>
+
+      <div class="col-sm-6">
+
+        {% include "tiles/kostenubersicht.twig" %}
+
+      </div>
 
     </div>
 
@@ -58,12 +40,16 @@
 
 </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div class="shadow-fix">
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+</div>
 
 {% endblock %}
 

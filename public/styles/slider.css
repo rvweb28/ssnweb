@@ -65,3 +65,26 @@
     left: 0%;
   }
 }
+
+.slide-above-hero {
+  box-shadow: 0px 0px 80px #666;
+  z-index: 0;
+  position: relative;
+  background-color: #fff;
+}
+.shadow-fix {
+  background-color: #fff;
+  z-index: 1;
+  position: relative;
+}
+.hero-image {
+  background-image: url("/gfx/vertrauen.jpg");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  z-index: -1;
+  height: 92%; width: 100%;
+}
+.hero-image-space {
+  height: 92%; width: 100%;
+}

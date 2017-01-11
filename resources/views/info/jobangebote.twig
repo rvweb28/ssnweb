@@ -1,6 +1,6 @@
 {% extends "layout.twig" %}
 
-{% block title %}Leistungsangebot{% endblock %}
+{% block title %}Jobangebote{% endblock %}
 
 {% block content %}
 
@@ -8,7 +8,11 @@
 
 <div class="container min-container">
 
-  {% include "tiles/leistungsangebot.twig" %}
+  <div class="tile">
+
+    {% include "data/jobangebote.html" %}
+
+  </div>
 
 </div>
 

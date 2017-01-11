@@ -6,10 +6,12 @@ class Controller      # BaseController, just extend it when creating a new contr
 {
   protected $container;
   protected $view;
+  protected $router;
 
   public function __construct($container)
   {
     $this->container = $container;
     $this->view = $container->view;
+    $this->router = $container->router;
   }
 }

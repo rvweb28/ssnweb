@@ -1,21 +1,22 @@
 <?php
 
-$app->get('/', 'HomeController:index')->setName('index');
-$app->get('/impressum', 'HomeController:legal')->setName('legal');
-$app->get('/kontakt', 'HomeController:contact')->setName('contact');
-$app->get('/datenschutz', 'HomeController:privacy')->setName('privacy');
+$app->get('/', 'StaticController:index')->setName('index');
+$app->get('/home', 'StaticController:index')->setName('home');
+$app->get('/impressum', 'StaticController:legal')->setName('legal');
+$app->get('/kontakt', 'StaticController:contact')->setName('contact');
+$app->get('/datenschutz', 'StaticController:privacy')->setName('privacy');
 
-$app->get('/gutscheine', 'HomeController:gutscheine')->setName('gutscheine');
-$app->get('/jobangebote', 'HomeController:jobangebote')->setName('jobangebote');
+$app->get('/jobangebote', 'StaticController:jobangebote')->setName('jobangebote');
+$app->get('/leistungsangebot', 'StaticController:leistungsangebot')->setName('leistungsangebot');
+$app->get('/mitarbeiter', 'StaticController:mitarbeiter')->setName('mitarbeiter');
+$app->get('/kostenuebersicht', 'StaticController:kostenubersicht')->setName('kostenubersicht');
+$app->get('/pflegestaerkungsgesetz', 'StaticController:pflegegesetz')->setName('pflegegesetz');
 
-$app->get('/leistungsangebot', 'HomeController:leistungsangebot')->setName('leistungsangebot');
-$app->get('/mitarbeiter', 'HomeController:mitarbeiter')->setName('mitarbeiter');
-$app->get('/kostenuebersicht', 'HomeController:kostenubersicht')->setName('kostenubersicht');
-$app->get('/pflegestaerkungsgesetz', 'HomeController:pflegegesetz')->setName('pflegegesetz');
-
-$app->get('/jobangebote/bearbeiten', 'HomeController:jobEdit')->setName('jobangeboteBearbeiten');
-$app->post('/jobangebote/bearbeiten/login', 'HomeController:jobLogin')->setName('jobLogin');
-$app->post('/jobangebote/bearbeiten', 'HomeController:jobCommitEdit');
+$app->get('/{page}/bearbeiten', 'AuthController:bearbeiten')->setName('bearbeiten');
+$app->get('/bearbeiten', 'AuthController:editHome')->setName('editHome');
+$app->post('/login', 'AuthController:processLogin')->setName('processLogin');
+$app->get('/logout', 'AuthController:logout')->setName('logout');
+$app->post('/commit_edit', 'AuthController:commitEdit')->setName('commitEdit');
 
 $app->post('/send_mail', function($request, $response) {
 

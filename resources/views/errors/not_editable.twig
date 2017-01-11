@@ -1,0 +1,26 @@
+{% extends "layout.twig" %}
+
+{% block title %}Seite kann nicht bearbeitet werden{% endblock %}
+
+{% block content %}
+<div class="distance"></div>
+
+<div class="container min-container">
+
+  <div class="tile">
+
+    <h1>Seite kann nicht bearbeitet werden</h1>
+
+    <p>
+      Die angefragte Seite kann nicht bearbeitet werden.
+      Bitte überprüfen Sie die eingegebene URL.
+      <br>
+      <br>
+      <a href="{{ path_for('index') }}">&gt; Zurück zur Startseite</a>
+    </p>
+
+  </div>
+
+</div>
+
+{% endblock %}
