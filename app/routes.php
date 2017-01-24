@@ -20,7 +20,7 @@ $app->post('/commit_edit', 'AuthController:commitEdit')->setName('commitEdit');
 
 $app->post('/send_mail', function($request, $response) {
 
-  $from = filter_var($request->getParam('email'), FILTER_SANITIZE_EMAIL);
+  $email = filter_var($request->getParam('email'), FILTER_SANITIZE_EMAIL);
   $name = filter_var($request->getParam('name'), FILTER_SANITIZE_STRING);
   $msg = filter_var($request->getParam('msg'), FILTER_SANITIZE_STRING);
 
@@ -28,11 +28,33 @@ $app->post('/send_mail', function($request, $response) {
 
   $msg = 'Von: ' . $name . ', ' . $from . '\r\n' . $msg;
 
-  $header = 'From: '. $from . "\r\n" .
-    'Reply-To: ' . $from . "\r\n" .
+  mail($to, "Website-Kontaktanfrage von $name", $msg, $header);
+
+  $to = 'info@senioren-service-neustadt.de';
+  $subject = "Website-Kontaktanfrage von $name";
+  $message = $msg;
+  $header = 'From: ' . $email . "\r\n" .
+    'Reply-To: ' . $email . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
-  mail($to, "Website-Kontaktanfrage von $name", $msg, $header);
+  $mail = new PHPMailer();
+
+  $mail->IsSMTP();
+  $mail->Host     = 'smtp.zoho.com';
+  $mail->SMTPAuth = true;
+  $mail->Username = 'info@senioren-service-neustadt.de';
+  $mail->Password = '';
+  $mail->Port = 587;
+  $mail->SMTPSecure = 'tls';
+
+  $mail->Subject = $subject;
+  $mail->Body     = $message;
+  $mail->From     = $email;
+  $mail->FromName = $email;
+  $mail->AddReplyTo($email);
+  $mail->CharSet  =  "utf-8";
+  $mail->AddAddress($to);
+  $mail->Send();
 
   return 'ok';
 

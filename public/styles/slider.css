@@ -23,7 +23,7 @@
 
 .slide-text {
   position: absolute;
-  top: 40%; left: 18%;
+  top: 44%; left: 18%; /* change to 40% if caption text is used */
   font-size: 40pt;
   text-shadow: 0px 0px 8px #111;
   color: #fff;
@@ -50,15 +50,19 @@
 @media screen and (max-width: 768px) {
   .slide-text {
     left: 0%;
+    text-align: center;
+    font-size: 32pt;
   }
   .slide-text-right {
     right: 0%;
     left: 0%;
+    text-align: center;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1200px) {
   .slide-text {
     left: 9%;
+    font-size: 38pt;
   }
   .slide-text-right {
     right: 9%;
@@ -78,7 +82,7 @@
   position: relative;
 }
 .hero-image {
-  background-image: url("/gfx/vertrauen.jpg");
+  background-image: url("/gfx/man-on-bench-scaled.jpeg");
   background-size: cover;
   background-position: center;
   position: fixed;

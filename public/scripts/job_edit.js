@@ -1,3 +1,5 @@
+// DEPRECATED SINCE (ALMOST) EVERY PAGE IS EDITABLE
+
 // def nextId
 
 function save() {
