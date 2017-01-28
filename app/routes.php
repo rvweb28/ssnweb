@@ -1,5 +1,8 @@
 <?php
 
+include __DIR__ . '/phpmailer/class.phpmailer.php';
+include __DIR__ . '/phpmailer/class.smtp.php';
+
 $app->get('/', 'StaticController:index')->setName('index');
 $app->get('/home', 'StaticController:index')->setName('home');
 $app->get('/impressum', 'StaticController:legal')->setName('legal');
@@ -43,7 +46,7 @@ $app->post('/send_mail', function($request, $response) {
   $mail->Host     = 'smtp.zoho.com';
   $mail->SMTPAuth = true;
   $mail->Username = 'info@senioren-service-neustadt.de';
-  $mail->Password = '';
+  $mail->Password = 'Michael!';
   $mail->Port = 587;
   $mail->SMTPSecure = 'tls';
 
