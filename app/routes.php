@@ -29,13 +29,10 @@ $app->post('/send_mail', function($request, $response) {
 
   $to = 'info@senioren-service-neustadt.de';
 
-  $msg = 'Von: ' . $name . ', ' . $from . '\r\n' . $msg;
-
-  mail($to, "Website-Kontaktanfrage von $name", $msg, $header);
+  $msg = 'Von: ' . $name . ', ' . $email . "\r\n" . $msg;
 
   $to = 'info@senioren-service-neustadt.de';
   $subject = "Website-Kontaktanfrage von $name";
-  $message = $msg;
   $header = 'From: ' . $email . "\r\n" .
     'Reply-To: ' . $email . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
@@ -51,13 +48,13 @@ $app->post('/send_mail', function($request, $response) {
   $mail->SMTPSecure = 'tls';
 
   $mail->Subject = $subject;
-  $mail->Body     = $message;
-  $mail->From     = $email;
+  $mail->Body     = $msg;
+  $mail->From     = $to;
   $mail->FromName = $email;
   $mail->AddReplyTo($email);
   $mail->CharSet  =  "utf-8";
   $mail->AddAddress($to);
-  $mail->Send();
+  $data = $mail->Send();
 
   return 'ok';
 
