@@ -27,7 +27,17 @@
           </div>
         </div>
 
-        <div class="slide" style="background-image: url('/gfx/img2.jpg')"></div>
+        <style>
+        .slide-left-fix {
+          background-position: top;
+        }
+        @media screen and (max-width: 768px) {
+          .slide-left-fix {
+            background-position: -100px 0px;
+          }
+        }
+        </style>
+        <div class="slide slide-left-fix" style="background-image: url('/gfx/img2.jpg')"></div>
       </div>
 
       <div class="item">
