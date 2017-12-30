@@ -23,22 +23,14 @@ $(document).ready(function() {
 
       $('.loader').addClass('hidden');
 
-      if(data == 'ok') {
+      $('.alert-success').removeClass('hidden');
+      $('.alert-success').hide();
+      $('.alert-success').slideDown();
 
-        $('.alert-success').removeClass('hidden');
-        $('.alert-success').hide();
-        $('.alert-success').slideDown();
+      $('#btn_new').removeClass('hidden');
+      $('#btn_new').hide();
+      $('#btn_new').fadeIn();
 
-        $('#btn_new').removeClass('hidden');
-        $('#btn_new').hide();
-        $('#btn_new').fadeIn();
-
-      } else {
-
-        $('#error_alert').removeClass('hidden');
-        $('#error_alert').hide();
-        $('#error_alert').slideDown();
-      }
     }).fail(function(data) {
 
       $('.loader').addClass('hidden');
