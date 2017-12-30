@@ -1,0 +1,2 @@
+# Automatically redirect to HTTPS
+http://senioren-service-neustadt.de/* https://senioren-service-neustadt.de/:splat 302!

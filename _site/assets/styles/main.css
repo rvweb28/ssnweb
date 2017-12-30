@@ -1,0 +1,134 @@
+* {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  outline: 0 !important;
+}
+html, body {
+  height: 100%;
+}
+footer {
+  border-top: 2px solid #43a047;
+  background-color: #81c784;
+  text-align: center;
+  padding: 55px;
+}
+footer a {
+  color: #333 !important;
+}
+footer a:hover {
+  color: #000 !important;
+}
+.footer-list {
+  list-style-type: none;
+  cursor: default;
+}
+.footer-list li {
+  display: inline;
+  padding-left: 6px; padding-right: 6px;
+}
+
+.min-container {
+  min-height: 100%;
+}
+
+.distance {
+  display: block;
+  width: 1px;
+  height: 60px;
+}
+@media screen and (max-width: 440px) {
+  .distance {
+    height: 100px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .distance {
+    height: 110px;
+  }
+}
+
+.tile {
+  box-shadow: 0px 2px 5px #898989;
+  padding: 6px;
+  padding-left: 10px; padding-right: 10px;
+  border-radius: 6px;
+  margin-top: 5px; margin-bottom: 15px;
+}
+
+
+.form-control {
+  border-radius: 2px;
+  padding: 4px 8px 4px 8px;
+  transition: background 0.2s;
+  font-size: 12pt;
+}
+.form-control:focus {
+  box-shadow: 0px 0px 4px #4caf50;
+  border-color: #4caf50;
+}
+.form-control:hover {
+  background-color: #f9f9f9;
+}
+.form-error {
+  box-shadow: 0px 0px 4px #f44336;
+  border-color: #f44336;
+}
+
+.loader {
+  display: inline-block;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 5px solid #4caf50;
+  border-top: 5px solid transparent;
+  margin-left: 5px;
+  animation-name: spin;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.font-size-chooser {
+  background-color: #fff;
+  position: fixed;
+  bottom: -6px;
+  padding-bottom: 6px;
+  left: 20px;
+  box-shadow: 0px 0px 5px #666;
+  border-radius: 6px;
+  cursor: default;
+  z-index: 2;
+}
+.choose-font {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.decrease-font-size, .increase-font-size {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 12px 8px 12px;
+}
+.choose-font, .decrease-font-size, .increase-font-size {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+@media screen and (max-width: 768px) {
+
+  .font-size-chooser {
+    visibility: hidden;
+  }
+}
